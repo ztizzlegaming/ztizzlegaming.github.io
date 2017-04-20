@@ -1,0 +1,308 @@
+<!-- Copyright 2016, Jordan Turley. All rights reserved. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<!-- SweetAlert -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.0.1/sweetalert.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.0.1/sweetalert.min.js"></script>
+
+	<style type="text/css">
+		.project {
+			/* height: 300px; */
+		}
+
+		.project-description {
+			font-size: 16px;
+		}
+
+		hr {
+			border-top: 1px solid gray;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		h2 {
+			margin-top: 0px;
+		}
+
+		.technologies-show {
+			cursor: pointer;
+		}
+
+		.technologies-used {
+			display: none;
+		}
+	</style>
+
+	<script type="text/javascript">
+		$(function () {
+			$('.technologies-show').on('click', function () {
+				var id = $(this).data('project');
+				$('#' + id).slideToggle();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<a href="/" class="navbar-brand">
+				Jordan Turley
+			</a>
+
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="skills.html">Skills</a>
+					</li>
+					<li class="active">
+						<a href="portfolio.html">Portfolio</a>
+					</li>
+					<li>
+						<a href="https://github.com/ztizzlegaming" target="_blank">GitHub</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/ztizzle" target="_blank">LinkedIn</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact Me</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" style="padding-bottom: 3em">
+		<div class="row" style="margin-bottom: 1em">
+			<div class="col-sm-12">
+				<h1>Portfolio</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-8">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/CSGOWinBig" target="_blank">CSGO Win Big</a>
+					</h2>
+					<div class="project-description">
+						CSGO Win Big was a gambling website for skins in the game Counter-Strike: Global Offensive. It worked by signing in through Steam, a video game service, then trading the items you want to gamble to a bot account. The more items you put in, the better chance you have to win. Once two people deposit, a timer starts for two minutes, and at the end, a winner is randomly chosen, and they get all of the skins in the pot. Over $4,000 worth of skins went through the site, and over 1300 rounds were played. In the end, I had to shut this site down, because some other, bigger betting sites were scamming users and promoting underage gambling, so Valve decided to shut all betting sites down.
+						<br><br>
+						<a href="http://imgur.com/a/PQDRs" target="_blank">View images of the site here</a>
+						<br><br>
+						<span class="technologies-show" data-project="csgowinbig">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="csgowinbig">
+							<ul>
+								<li>HTML/CSS/JavaScript with BootStrap and jQuery for website frontend</li>
+								<li>PHP, MySQL, and Steam Login API for website backend</li>
+								<li>C# on AWS EC2 instance for bot handling trades</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<img src="https://github.com/ztizzlegaming/CSGOWinBig/blob/master/src/images/logo-black.png?raw=true" style="width: 100%;">
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="http://35.160.184.231/math2o/" target="_blank">MatH2O</a>
+					</h2>
+					<div class="project-description">
+						MatH2O is a website that I developed with a classmate as a summer project. The goal is to allow users to answer mathematics multiple choice questions of varying subject and difficulty, from pre-algebra and geometry up to statistics and calculus. A percentage of revenue is donated to <a href="https://www.charitywater.org/" target="_blank">charity: water</a>, a charity that focuses on clean water projects in developing countries.
+						<br><br>
+						<span class="technologies-show" data-project="h2o">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="h2o">
+							<ul>
+								<li>HTML/CSS/JavaScript with BootStrap and jQuery for website frontend</li>
+								<li>PHP and MySQL for website backend</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-9">
+					<h2>
+						<a href="http://sayrebluegold.org/" target="_blank">Sayre Blue Gold</a>
+					</h2>
+					<div class="project-description">
+						Sayre Blue Gold is a website I developed with a classmate for an independent study at my high school. It is a website for hosting the WSMS podcast that the school puts out.
+						<br><br>
+						<span class="technologies-show" data-project="sayrebluegold">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="sayrebluegold">
+							<ul>
+								<li>HTML/CSS/JavaScript with BootStrap and jQuery for website frontend</li>
+								<li>PHP and MySQL for website backend</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<img src="https://www.sayreschool.org/uploaded/responsive/images/logo.png" style="height: 100%; background: #13376E; border-radius: 10px;">
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="http://35.160.184.231/musicplayer/" target="_blank">Music Player</a>
+					</h2>
+					<div class="project-description">
+						This is a web-based music player I created. I made it with the intention of bringing all the big music platforms together. A lot of people, myself included, use many sites and platforms for their music: YouTube, SoundCloud, and they have music on their own computer. This music player lets you add songs from any of these three, and play them seamlessly in your own playlists. The fact that it is web-based makes it easy to use from anywhere - you just login on any computer and all your music is right there. It isn't polished and doesn't look perfect, because I never 100% finished it, but it is fully functional. You can create an account, upload your own songs from your computer, and add songs from YouTube and SoundCloud.
+						<br><br>
+						<span class="technologies-show" data-project="musicplayer">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="musicplayer">
+							<ul>
+								<li>HTML/CSS/JavaScript with BootStrap and jQuery for website frontend</li>
+								<li>PHP and MySQL for website backend</li>
+								<li>YouTube and SoundCloud embedded JavaScript API</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/word-predictor" target="_blank">Word Predictor Program</a>
+					</h2>
+					<div class="project-description">
+						This is my final project for my "Data Structures and Intermediate Programming" class (CSC 223). It reads in a large amount of text from a file (we used the full text of Moby Dick), then lets you enter letters, and based on the frequency of matching words in the book, tries to predict your word.
+						<br><br>
+						<span class="technologies-show" data-project="wordpredictor">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="wordpredictor">
+							<ul>
+								<li>Java</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-8">
+					<h2>
+						<a href="http://www.indiedb.com/games/slender-sayre-edition" target="_blank">Sayre Slender</a>
+					</h2>
+					<div class="project-description">
+						Sayre Slender is a remake of the original "Slender: The 8 Pages" game, based in my high school. I made it using the Unity Game Engine. I modeled the school in Google Sketchup, then imported it into Unity and coded it. This was one of my earlier projects; I made this during my sophomore year of high school, before I had even taken any formal computer science classes. It was very popular within the school, and was picked up by a couple of YouTube channels, who uploaded videos <a href="https://www.youtube.com/watch?v=uuTVHBcFh-w" target="_blank">here</a> and <a href="https://www.youtube.com/watch?v=UTe3MiY9GvU" target="_blank">here</a>
+						<br>
+						Download for <a href="http://35.160.184.231/slender.zip">PC</a> or <a href="http://35.160.184.231/slender_mac.zip">Mac</a>
+						<br><br>
+						<span class="technologies-show" data-project="slender">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="slender">
+							<ul>
+								<li>Sketchup for modeling of school</li>
+								<li>Unity with JavaScript (UnityScript) for the game itself</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<img src="images/sayre_slender.jpg" style="width: 100%; border-radius: 10px">
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/dungeon-adventure-game" target="_blank">Dungeon Adventure Game</a>
+					</h2>
+					<div class="project-description">
+						This is my final project for my "Software Development" class (CSC 300). It is a first person game set in a dungeon. There are monsters and items you can pick up, such as heatlth potions and weapons. The class worked on this project for a solid amount of the semester, with weekly deadlines of what work was to be done by that time.
+						<br><br>
+						<span class="technologies-show" data-project="dungeon">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="dungeon">
+							<ul>
+								<li>Java</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						Several AI Projects
+					</h2>
+					<div class="project-description">
+						In my "Artificial Intelligence" class (CSC 339), we explored many topics of AI, such as A* and other search techniques, boolean satisfiability (SAT) and SAT solvers, Bayesian networks, and more. We had projects due approximately every two weeks. I did all of these projects in Java, but we were allowed to use any language we wanted to.
+						<br><br>
+						<ul>
+							<li>
+								<a href="https://github.com/ztizzlegaming/back2back" target="_blank">Modeling and solving the game Back2Back using A*</a>
+							</li>
+							<li>
+								<a href="https://github.com/ztizzlegaming/sat-solver" target="_blank">Writing my own SAT solver, using both DPLL and WalkSAT</a>
+							</li>
+							<li>
+								<a href="https://github.com/ztizzlegaming/hexadecimal-sudoku-solver" target="_blank">Reducing hexidecimal Sudoku to SAT and solving it using a SAT solver</a>
+							</li>
+							<li>
+								<a href="https://github.com/ztizzlegaming/bayesian-network" target="_blank">Writing a Bayesian network</a>
+							</li>
+							<li>
+								<a href="https://github.com/ztizzlegaming/2x2-rubiks-cube-solver" target="_blank">Writing a 2x2 Rubiks cube solver using A*</a>
+							</li>
+						</ul>
+						<br>
+						<span class="technologies-show" data-project="ai">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="ai">
+							<ul>
+								<li>Java</li>
+								<li>SAT4J, a SAT solver written in Java</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

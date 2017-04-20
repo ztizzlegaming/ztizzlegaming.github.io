@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jordan Turley</title>
+	<title>Contact Me</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,6 +21,34 @@
 	<!-- SweetAlert -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.0.1/sweetalert.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.0.1/sweetalert.min.js"></script>
+
+	<style type="text/css">
+		.input-error {
+			border: 1px solid red;
+		}
+	</style>
+
+	<script type="text/javascript">
+		$(function () {
+			$('#contact-form').on('submit', function () {
+				var success = true;
+
+				$('.input').each(function () {
+					var $elem = $(this);
+					if ($elem.val() === '') {
+						success = false;
+						$elem.addClass('input-error');
+					} else {
+						$elem.removeClass('input-error');
+					}
+				});
+
+				if (!success) {
+					return false;
+				}
+			});
+		});
+	</script>
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top">
@@ -37,7 +65,7 @@
 
 			<div class="collapse navbar-collapse navHeaderCollapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active">
+					<li>
 						<a href="/">Home</a>
 					</li>
 					<li>
@@ -52,7 +80,7 @@
 					<li>
 						<a href="https://www.linkedin.com/in/ztizzle" target="_blank">LinkedIn</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="contact.html">Contact Me</a>
 					</li>
 				</ul>
@@ -63,9 +91,29 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1 style="text-align: center;">Welcome!</h1>
+				<h1 style="text-align: center">Contact Me</h1>
+				<script type="text/javascript">
+					var m = decodeURIComponent((location.search.split('m=')[1]||'').split('&')[0]);
+					if (m !== '') {
+						document.write('<h3 style="text-align: center">' + m + '</h3>');
+					}
+				</script>
 				<div style="margin-left: 15%; margin-right: 15%; font-size: 20px;">
-					My name is Jordan Turley. I am an undergraduate sophomore at Centre College, in Danville, KY, majoring in Computer Science and minoring in Math. I have developed several projects, some small and some large, and some of which have been quite successful. I am also in the process of some developments right now. To view my technical skills, project portfolio, or contact me with questions or business opportunities, click on the buttons in the top right!
+					<form action="contact_script.php" method="post" id="contact-form">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" name="name" class="form-control input" id="name" placeholder="name">
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" name="email" class="form-control input" id="email" placeholder="email">
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea class="form-control input" id="message" name="message" placeholder="message" style="height: 10em"></textarea>
+						</div>
+						<input type="submit" name="submit" class="btn btn-lg btn-block btn-success">
+					</form>
 				</div>
 			</div>
 		</div>
