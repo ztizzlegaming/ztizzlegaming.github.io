@@ -112,16 +112,17 @@
 			<div class="col-sm-12 project">
 				<div class="col-sm-12">
 					<h2>
-						<a href="https://joinenigma.com">&Xi;NIGM&Lambda;</a>
+						<a href="https://joinenigma.com">ENIGMA</a>
 					</h2>
 					<div class="project-description">
-						&Xi;NIGM&Lambda; is a code-breaking puzzle game where you compete against other players to win real money. Users register for free and are given one clue to start. This clue leads them to other clues which eventually lead to a final answer which they input on the home screen. The first user to enter the correct answer wins the game and wins real money. I developed &Xi;NIGM&Lambda; during the summer of 2019.
+						ENIGMA is a code-breaking puzzle game where you compete against other players to win real money. Users register for free and are given one clue to start. This clue leads them to other clues which eventually lead to a final answer which they input on the home screen. The first user to enter the correct answer wins the game and wins real money. I developed ENIGMA during the summer of 2019.
 						<br><br>
 						<span class="technologies-show" data-project="enigma">Technologies used: &#9660;</span>
 						<div class="technologies-used" id="enigma">
 							<ul>
 								<li>HTML/CSS/JavaScript with BootStrap and jQuery for website frontend</li>
 								<li>PHP and MySQL for website backend</li>
+								<li>Hosted on AWS EC2 instance</li>
 							</ul>
 						</div>
 					</div>
@@ -134,11 +135,11 @@
 				<div class="col-sm-12">
 					<h2>
 						<a href="https://github.com/ztizzlegaming/subtractive-vertex-magic-labelings">
-							Sequential/OpenMP/MPI Subtractive Vertex Magic Labeling Tool
+							Parallel Graph Theory/Graph Labeling Algorithm
 						</a>
 					</h2>
 					<div class="project-description">
-						For my Research in Graph Labelings and Parallel Computing classes, I developed a tool for my classmates to use which implements a brute force algorithm to find subtractive vertex magic labelings of lemniscate graphs. It was very difficult to find these by hand, but the algorithm was able to do it for small graphs in seconds, and for large graphs ina few hours or days. We used this program on a powerful 64-core Linux server at Centre College, as well as the Comet cluster at the San Diego Supercomputer Center through an XCEDE grant. This program gave crucial insight into the nature of these labelings and these graphs and allowed us to find patterns in the labelings to attempt to generalize the labeling to any lemniscate graph. A paper is in progress publishing results for magic labelings and lemniscate graphs.
+						For my Research in Graph Labelings and Parallel Computing classes, I developed a tool for my classmates to use which implements a brute force algorithm to find subtractive vertex magic labelings of lemniscate graphs. It was very difficult to find these by hand, but the algorithm is able to find every labeling for small graphs in seconds, and for large graphs in a few hours or days. We used this program on a 64-core Linux server at Centre College, as well as the Comet cluster at the San Diego Supercomputer Center through an XSEDE grant. This program gave crucial insight into the nature of these labelings and graphs. This allowed us to find patterns in the labelings to attempt to generalize the labeling to any lemniscate graph. A paper is in progress publishing results for magic labelings and lemniscate graphs.
 						<br><br>
 						<span class="technologies-show" data-project="graph">Technologies used: &#9660;</span>
 						<div class="technologies-used" id="graph">
@@ -158,10 +159,12 @@
 			<div class="col-sm-12 project">
 				<div class="col-sm-12">
 					<h2>
-						<a href="https://github.com/ztizzlegaming/netflix-prize">The Netflix Prize</a>
+						<a href="https://github.com/ztizzlegaming/netflix-prize">Movie Recommendation System</a>
 					</h2>
 					<div class="project-description">
-						During the summer of 2017 and 2018, I had the opportunity to conduct research with Dr. Michael Lamar and another student at Centre College. During this research project, we developed and implemented a statistical learning model applied to the <a href="https://en.wikipedia.org/wiki/Netflix_Prize">Netflix Prize</a> problem. We applied the Co-Occurance Data Embedding (<a href="http://www.jmlr.org/papers/volume8/globerson07a/globerson07a.pdf">CODE</a>) algorithm to the Likert-scale data of the Netflix Prize. We learn an embedding of the users and movies, and use this embedding to make a prediction on a user's rating of a movie. The algorithm is fast, simple, and intuitive, and the predictions it makes match those of other more complex approaches.
+						During the summer of 2017 and 2018, I had the opportunity to conduct research with Dr. Michael Lamar and another student at Centre College. During this research project, we developed and implemented a machine learning recommender system model applied to the <a href="https://en.wikipedia.org/wiki/Netflix_Prize">Netflix Prize</a> dataset. We applied the Co-Occurance Data Embedding (<a href="http://www.jmlr.org/papers/volume8/globerson07a/globerson07a.pdf">CODE</a>) algorithm to the Likert-scale data of the Netflix Prize. We learn an embedding of the users and movies, and use this embedding to make a prediction on a user's rating of a movie. The algorithm is fast, simple, and intuitive, and the predictions it makes match those of other more complex approaches.
+						<br><br>
+						At a high level, the algorithm works like this. We have a set of observations which consist of the user, movie, and rating given to the movie in stars from one to five. Imagine a 3D ball, like a basketball or a soccer ball. For every unique user, we put a random point on the ball. For every movie, we put five random points, which corresponds to one for each rating. We iterate through the data, and for every user giving a movie a rating, we move the user point and the movie-rating point a little bit closer together. To prevent all the points converging, we randomly pick a user and a movie-rating and move them apart. We also do some ad-hoc repulsions between pairs of users and pairs of movie-ratings, which seemed to improve the performance. We slow down the movements over time, and after many iterations of the algorithm, we converge to a useful embedding of the data points. We use the distance between a user and a movie to determine the likeliness of the user giving a rating.
 						<br><br>
 						<span class="technologies-show" data-project="netflix">Technologies used: &#9660;</span>
 						<div class="technologies-used" id="netflix">
@@ -245,26 +248,26 @@
 			<div class="col-sm-12 project">
 				<div class="col-sm-12">
 					<h2>
-						AI Projects
+						<a href="https://github.com/ztizzlegaming/CSC339-AI-Projects" target="_blank">AI Projects</a>
 					</h2>
 					<div class="project-description">
 						In my "Artificial Intelligence" class (CSC 339), we explored many topics of AI, such as A* and other search techniques, boolean satisfiability (SAT) and SAT solvers, Bayesian networks, and more. We had projects due approximately every two weeks. I did all of these projects in Java, but we were allowed to use any language we wanted to.
 						<br><br>
 						<ul>
 							<li>
-								<a href="https://github.com/ztizzlegaming/back2back" target="_blank">Modeling and solving the game Back2Back using A*</a>
+								Modeling and solving the game Back2Back using A*
 							</li>
 							<li>
-								<a href="https://github.com/ztizzlegaming/sat-solver" target="_blank">Writing my own SAT solver, using both DPLL and WalkSAT</a>
+								Writing my own SAT solver, using both DPLL and WalkSAT
 							</li>
 							<li>
-								<a href="https://github.com/ztizzlegaming/hexadecimal-sudoku-solver" target="_blank">Reducing hexidecimal Sudoku to SAT and solving it using a SAT solver</a>
+								Reducing hexidecimal Sudoku to SAT and solving it using a SAT solver
 							</li>
 							<li>
-								<a href="https://github.com/ztizzlegaming/bayesian-network" target="_blank">Writing a Bayesian network</a>
+								Writing a Bayesian network
 							</li>
 							<li>
-								<a href="https://github.com/ztizzlegaming/2x2-rubiks-cube-solver" target="_blank">Writing a 2x2 Rubiks cube solver using A*</a>
+								Writing a 2x2 Rubiks cube solver using A*
 							</li>
 						</ul>
 						<br>
