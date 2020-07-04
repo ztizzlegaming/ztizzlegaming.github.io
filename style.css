@@ -1,15 +1,12 @@
 body {
 	background: #111;
 	color: #eee;
+	font-family: 'Ubuntu', sans-serif;
 }
 
-a {
-	color: gray;
+a, a:hover {
+	color: #aaa;
 
-}
-
-a:hover {
-	color: gray;
 }
 
 .project-description {
