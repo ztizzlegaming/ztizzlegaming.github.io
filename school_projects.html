@@ -1,0 +1,358 @@
+<!-- Copyright 2016, Jordan Turley. All rights reserved. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>School Projects | Jordan Turley</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<a href="/" class="navbar-brand">
+				Jordan Turley
+			</a>
+
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="skills.html">Skills</a>
+					</li>
+					<li>
+						<a href="personal_projects.html">Personal Projects</a>
+					</li>
+					<li class="active">
+						<a href="school_projects.html">School Projects</a>
+					</li>
+					<li>
+						<a href="experience.html">Experience</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" style="padding-bottom: 3em">
+		<div class="row" style="margin-bottom: 1em">
+			<div class="col-sm-12">
+				<h1>School Projects</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a
+							href="https://github.com/shravnages/cs205_fp"
+							target="_blank">
+							COVID-19 News Article Analysis
+						</a>
+					</h2>
+					<div class="project-description">
+						During "CS205: Computing Foundations for Computational Science", I worked with a team of two other students to analyze a growing collection of COVID-19 news articles. The news article dataset is hosted by <a href="https://blog.gdeltproject.org/now-live-updating-expanded-a-new-dataset-for-exploring-the-coronavirus-narrative-in-global-online-news/">The GDELT Project</a> and is a collection of web-scraped news articles relating to the COVID-19 pandemic. My team and I used parallel programming tools we learned in the class to develop a data pipeline for analysis.
+						<br><br>
+						The steps of the pipeline are as follows:
+						<ol>
+							<li>Preprocessing: remove stop words and meaningless words like 'said', 'like', 'also', etc.</li>
+							<li>Top word matrix: for each article in the dataset, count the frequency of words appearing in the article. Initially we did this for the full set of words in all articles, but later we reduced this to a much smaller set of words, like 'coronavirus', 'covid19', 'lockdown', 'health', 'cases', 'pandemic', 'virus', etc. Using a smaller set of words allowed us to process many more articles in a much shorter time.</li>
+							<li>Co-occurrence matrix: If X is the top word matrix, then the co-occurrence matrix is calculated by computing X<sup>T</sup>X, which is also known as the Gram matrix of X. This matrix is a square n &times; n matrix, where n is the size of the dictionary used above, and it tells us the frequency of each word occurring with other words in the set of articles.</li>
+						</ol>
+						<br>
+						We implemented the preprocessing step using PySpark and MapReduce. The top word matrix step was implemented using PySpark as well as OpenMP and MPI in C++. Finally, the co-occurrence matrix step was implemented using OpenMP and MPI in C++.
+						<br><br>
+						More about the pipeline and our results can be viewed here: <a href="https://shravnages.github.io/cs205_fp/" href="_blank">https://shravnages.github.io/cs205_fp/</a>.
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a
+							href="https://github.com/ztizzlegaming/AC209-Data-Science-Projects"
+							target="_blank">
+							AC209A/B: Trump Tweet and Government Project Success
+						</a>
+					</h2>
+					<div class="project-description">
+						The following are two term projects from AC209A/B at Harvard University.
+						<br><br>
+						<b>Donald Trump Tweet Analysis</b>
+						<br><br>
+						My team and I were tasked with analyzing President Trump's twitter feed. This was an open-ended project, and we decided to use sentiment analysis to predict two key Twitter variables: the number of favorites a tweet receives, and the number of followers received on the following day. All of this data is public and can be downloaded or scraped. We started by visualizing several variables and interactions of variables, then modeled the two response variables using three modeling techniques: linear regression, XGBoost, and neural networks. We used variables like the length of the tweet in characters, the time of day, the source of the tweet (iPhone, Desktop, etc.), as well as numerical scores calculated for polarity (the emotion of the tweet, happy vs. sad or angry) and subjectivity (how emotionally charged the tweet is, factual vs. subjective). The sentiment analysis was conducted using TextBlob. Our models were not very accurate, but we did determine with high statistical significance that lower polarity and higher subjectivity result in higher engagement numbers. We also determined that polarity and subjectivity are positively correlated with each other.
+						<br><br>
+						<b>Predicting Project Success</b>
+						<br><br>
+						My team and I used several modeling techniques to predict the success of government projects. Federal, state, and local governments begin hundreds of new projects every day, but many of them will end overbudget in delays, or might not be completed at all. An accurate model of project success would be useful for two reasons: first, an accurate prediction of success could allow a government to cancel bad projects earlier and move funding to more successful projects; second, an interpretable model could yield important inferences about what makes a successful project.
+						<br><br>
+						We started by visualizing several project datasets from New York City, Washington DC, and Federal IT projects. Next, we focused on the New York City project dataset and applied several modeling techniques, from simpler models like k-Nearest Neighbors and Linear Regression, to more complex models like generalized additive models and neural networks. Overall, we did not achieve great accuracy with our models, but we did glean important inferences about what determines project success. For example, the team that is performing the project had a big impact on the project success.
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/subtractive-vertex-magic-labelings" target="_blank">
+							Parallel Graph Theory/Graph Labeling Algorithm
+						</a>
+					</h2>
+					<div class="project-description">
+						For my "Research in Graph Labelings" and "Parallel Computing" classes at Centre College, I developed a tool for my classmates to use which implements a brute force algorithm to find subtractive vertex magic labelings of lemniscate graphs. It was very difficult to find these by hand, but the algorithm is able to find every labeling for small graphs in seconds, and for large graphs in a few hours or days. We used this program on a 64-core Linux server at Centre College, as well as the Comet cluster at the San Diego Supercomputer Center through an XSEDE grant. This program gave crucial insight into the nature of these labelings and graphs. This allowed us to find patterns in the labelings to attempt to generalize the labeling to any lemniscate graph. A paper is in progress publishing results for magic labelings and lemniscate graphs.
+						<br><br>
+						<span class="technologies-show" data-project="graph">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="graph">
+							<ul>
+								<li>C</li>
+								<li>OpenMP</li>
+								<li>MPI</li>
+								<li>Python for analysis of output</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row" id="netflix_div">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/netflix-prize" target="_blank">Movie Recommendation System</a>
+					</h2>
+					<div class="project-description">
+						During the summer of 2017 and 2018, I had the opportunity to conduct research with Dr. Michael Lamar and another student at Centre College. During this research project, we developed and implemented a machine learning recommender system model applied to the <a href="https://en.wikipedia.org/wiki/Netflix_Prize">Netflix Prize</a> dataset. We applied the Co-Occurance Data Embedding (<a href="http://www.jmlr.org/papers/volume8/globerson07a/globerson07a.pdf">CODE</a>) algorithm to the Likert-scale data of the Netflix Prize. We learn an embedding of the users and movies, and use this embedding to make a prediction on a user's rating of a movie. The algorithm is fast, simple, and intuitive, and the predictions it makes match those of other more complex approaches.
+						<br><br>
+						At a high level, the algorithm works as follows. We have a set of observations which consist of the user, movie, and rating given to the movie in stars from one to five; an observation looks like {user_id: 5, movie_id: 8, rating: 3}. Imagine a unit sphere, or a 3D ball, like a basketball or a soccer ball. For every unique user, we put a random point on the ball. For every movie, we put five random points, which corresponds to one for each rating. We iterate through the data, and for every user giving a movie a rating, we move the user point and the movie-rating point a little bit closer together. To prevent all the points converging, we randomly pick a user and a movie-rating and move them apart. We also do some ad-hoc repulsions between pairs of users and pairs of movie-ratings, which seemed to improve the performance. We slow down the movements over time, and after many iterations of the algorithm, we converge to a useful embedding of the data points. We use the distance between a user and a movie to determine the likeliness of the user giving a rating.
+						<br><br>
+						We presented a poster at the 2019 Joint Math Meetings, which is shown below.
+						<a href="https://github.com/ztizzlegaming/movie-recommendation-system/blob/master/poster.pdf" target="_blank">
+							<img src="https://camo.githubusercontent.com/970a9eee5b1cee536da30466d1b4abf4002dee39/68747470733a2f2f692e696d6775722e636f6d2f3963547245384b2e706e67" style="width: 100%;">
+						</a>
+						<br><br>
+						<span class="technologies-show" data-project="netflix">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="netflix">
+							<ul>
+								<li>C++</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/database-systems-project" target="_blank">TubeMaster Database Application</a>
+					</h2>
+					<div class="project-description">
+						I worked with a team of students in our Database Systems class to develop an application for <a href="https://tubemasterinc.com/" target="_blank">TubeMaster</a>, a real-life client in Louisville, KY. We designed the database and implemented the application using PostgreSQL and PHP.
+						<br><br>
+						<span class="technologies-show" data-project="tubemaster">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="tubemaster">
+							<ul>
+								<li>Google Cloud Platform</li>
+								<li>HTML/CSS with Bootstrap for website frontend</li>
+								<li>PHP for website backend</li>
+								<li>PostgreSQL</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://code.centre.edu/joshua.boldt/assessment/" target="_blank">Department Assessment Project</a>
+					</h2>
+					<div class="project-description">
+						I worked with a team of students in our Software Engineering class to develop a tool which simplifies and standardizes the yearly assessment report for each of the major departments at Centre College.
+						<br><br>
+						<span class="technologies-show" data-project="department-assessment">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="department-assessment">
+							<ul>
+								<li>HTML/CSC/JavaScript with Bootstrap for website frontend</li>
+								<li>Angular</li>
+								<li>Node.js with Express</li>
+								<li>MongoDB</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/CSC339-AI-Projects" target="_blank">AI Projects</a>
+					</h2>
+					<div class="project-description">
+						In my "Artificial Intelligence" class (CSC 339), we explored many topics of AI, such as A* and other search techniques, boolean satisfiability (SAT) and SAT solvers, Bayesian networks, and more. We had projects due approximately every two weeks. I did all of these projects in Java, but we were allowed to use any language we wanted to.
+						<br><br>
+						<ul>
+							<li>
+								Modeling and solving the game Back2Back using A*
+							</li>
+							<li>
+								Writing my own SAT solver, using both DPLL and WalkSAT
+							</li>
+							<li>
+								Reducing hexidecimal Sudoku to SAT and solving it using a SAT solver
+							</li>
+							<li>
+								Writing a Bayesian network
+							</li>
+							<li>
+								Writing a 2x2 Rubiks cube solver using A*
+							</li>
+						</ul>
+						<br>
+						<span class="technologies-show" data-project="ai">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="ai">
+							<ul>
+								<li>Java</li>
+								<li>SAT4J, a SAT solver written in Java</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/machine-learning">Machine Learning Projects</a>
+					</h2>
+					<div class="project-description">
+						In my "Statistical Modeling" (MAT 205) and "Machine Learning" class (CSC 420), we learned the theory behind several mathematical machine learning models, Regression and Logistic Regression, Naïve Bayes, k-Nearest Neighbors, Support Vector Machines, Neural Networks, and others. We also had several projects to apply these concepts to real-world data. I have included these projects and some others that I explored on my own here.
+						<br><br>
+						<span class="technologies-show" data-project="ml">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="ml">
+							<ul>
+								<li>R/R-Studio</li>
+								<li>Python</li>
+								<li>scikit-learn</li>
+								<li>Keras</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/dungeon-adventure-game" target="_blank">Dungeon Adventure Game</a>
+					</h2>
+					<div class="project-description">
+						This is my final project for my "Software Development" class (CSC 300). It is a first person game set in a dungeon. There are monsters and items you can pick up, such as heatlth potions and weapons. The class worked on this project for a solid amount of the semester, with weekly deadlines of what work was to be done by that time.
+						<br><br>
+						<span class="technologies-show" data-project="dungeon">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="dungeon">
+							<ul>
+								<li>Java</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-12">
+					<h2>
+						<a href="https://github.com/ztizzlegaming/word-predictor" target="_blank">Word Predictor Program</a>
+					</h2>
+					<div class="project-description">
+						This is my final project for my "Data Structures and Intermediate Programming" class (CSC 223). It reads in a large amount of text from a file (we used the full text of Moby Dick), then lets you enter letters, and based on the frequency of matching words in the book, tries to predict your word.
+						<br><br>
+						<span class="technologies-show" data-project="wordpredictor">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="wordpredictor">
+							<ul>
+								<li>Java</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12 project">
+				<div class="col-sm-9">
+					<h2>
+						<a href="http://sayrebluegold.org/" target="_blank">Sayre Blue Gold</a>
+					</h2>
+					<div class="project-description">
+						Sayre Blue Gold is a website I developed with a classmate for an independent study at my high school. It is a website for hosting the WSMS podcast that the school puts out.
+						<br><br>
+						<span class="technologies-show" data-project="sayrebluegold">Technologies used: &#9660;</span>
+						<div class="technologies-used" id="sayrebluegold">
+							<ul>
+								<li>HTML/CSS/JavaScript with BootStrap and jQuery for website frontend</li>
+								<li>PHP and MySQL for website backend</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<img src="https://www.sayreschool.org/uploaded/responsive/images/logo.png" style="height: 100%; background: #13376E; border-radius: 10px;">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-----------------JS SCRIPTS--------------->
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+			$('.technologies-show').on('click', function () {
+				var id = $(this).data('project');
+				$('#' + id).slideToggle();
+			});
+		});
+	</script>
+</body>
+</html>

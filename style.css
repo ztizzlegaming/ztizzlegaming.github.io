@@ -1,0 +1,37 @@
+body {
+	background: #111;
+	color: #eee;
+}
+
+a {
+	color: gray;
+
+}
+
+a:hover {
+	color: gray;
+}
+
+.project-description {
+	font-size: 16px;
+}
+
+hr {
+	border-top: 1px solid gray;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	margin-top: 0px;
+}
+
+.technologies-show {
+	cursor: pointer;
+}
+
+.technologies-used {
+	display: none;
+}
